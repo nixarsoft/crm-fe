@@ -1,12 +1,13 @@
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
-import CaptionWithRadio from "../../components/caption-with-radio";
-import CaptionWithText from "../../components/caption-with-text";
+import CaptionWithRadio from "../../caption-with-radio";
+import CaptionWithText from "../../caption-with-text";
 
-export default function Task1AdditionalInfo() {
+export default function AdditionalInfoForm() {
   const [purpose, setPurpose] = useState("client");
   const [label, setLabel] = useState("");
   const [key, setKey] = useState("");
   const [status, setStatus] = useState("active");
+
   console.log(">> All state values:", { purpose, label, key, status });
 
   const additionalInfoFormRef = useRef();
@@ -25,16 +26,16 @@ export default function Task1AdditionalInfo() {
   }, [status]);
 
   useLayoutEffect(() => {
-    containerRef.current.style.backgroundColor = "red";
+    // containerRef.current.style.backgroundColor = "red";
     console.log(">> useLayoutEffect çalıştı.");
   }, []);
 
-  const optionsArr = Array(80).fill(0);
+  // const optionsArr = Array(80).fill(0);
   return (
     <div
       className="row"
       ref={containerRef}
-      style={{ backgroundColor: "green" }}
+      // style={{ backgroundColor: "green" }}
     >
       <div className="col-3">
         <form ref={additionalInfoFormRef}>
@@ -62,39 +63,6 @@ export default function Task1AdditionalInfo() {
               label="Agent"
               onClick={(event) => setPurpose(event.target.value)}
             />
-          </div>
-
-          <div className="mb-3">
-            Purpose:
-            <br />
-            <select
-              name="purpose_select"
-              class="form-select"
-              aria-label="Default select example"
-            >
-              <option selected>Open this select menu</option>
-
-              {optionsArr.map((item, index) => (
-                <option value={index}>{index}</option>
-              ))}
-            </select>
-          </div>
-
-          <div className="mb-3">
-            Purpose:
-            <br />
-            <select
-              name="purpose_multiselect"
-              class="form-select"
-              aria-label="Default select example"
-              multiple
-            >
-              <option selected>Open this select menu</option>
-
-              {optionsArr.map((item, index) => (
-                <option value={index}>{index}</option>
-              ))}
-            </select>
           </div>
 
           <CaptionWithText
@@ -148,6 +116,7 @@ export default function Task1AdditionalInfo() {
                 myObj["val" + i] = 0;
               }
 
+              // Formu json'a çevir.
               const formValues = Object.fromEntries(
                 new FormData(additionalInfoFormRef.current).entries()
               );

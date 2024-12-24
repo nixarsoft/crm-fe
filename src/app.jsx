@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
+import AdditionalInfoForm from "./components/forms/additional-info-form";
 import Header from "./components/header";
-import Task1AdditionalInfo from "./tasks/task1-additional-info";
 
 /*
 Soru: JS'de export default ile export const arasındaki farklar nelerdir?
@@ -73,7 +73,7 @@ export default function App() {
           </p>
         </div>
 
-        <Task1AdditionalInfo />
+        <AdditionalInfoForm />
       </div>
     </>
   );
