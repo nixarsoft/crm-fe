@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import AdditionalInfoForm from "./components/forms/additional-info-form";
 import Header from "./components/header";
+import TableGenerator from "./components/TableGenerator/TableGenerator";
+import { Box } from "@mui/material";
 
 /*
 Soru: JS'de export default ile export const arasındaki farklar nelerdir?
@@ -48,6 +50,84 @@ export default function App() {
      içerisinde kullanılmalı.
   */
 
+
+  const data = [
+    {
+      id: 35,
+      purpose: "Client",
+      label: "Odoo Id",
+      Key: "odoo_id",
+      Status: "Active",
+      CreatedAt: "2024-12-2 09:00",
+      actions: [
+        { name: "Edit", onClick: () => handleEdit(1), color: "success" },
+        { name: "Delete", onClick: () => handleDelete(1), color: "error" },
+      ]
+    },
+    {
+      id: 35,
+      purpose: "Client",
+      label: "Odoo Id",
+      Key: "odoo_id",
+      Status: "Active",
+      CreatedAt: "2024-12-2 09:00",
+      actions: [
+        { name: "Edit", onClick: () => handleEdit(1), color: "warning" },
+        { name: "Delete", onClick: () => handleDelete(1), color: "info" },
+      ]
+    },
+    {
+      id: 35,
+      purpose: "Client",
+      label: "Odoo Id",
+      Key: "odoo_id",
+      Status: "Active",
+      CreatedAt: "2024-12-2 09:00",
+      actions: [
+        { name: "Edit", onClick: () => handleEdit(1), color: "primary" },
+        { name: "Delete", onClick: () => handleDelete(1), color: "secondary" },
+      ]
+    },
+    {
+      id: 35,
+      purpose: "Client",
+      label: "Odoo Id",
+      Key: "odoo_id",
+      Status: "Active",
+      CreatedAt: "2024-12-2 09:00",
+      actions: [
+        { name: "Edit", onClick: () => handleEdit(1), color: "success" },
+        { name: "Delete", onClick: () => handleDelete(1), color: "error" },
+      ]
+    },
+    {
+      id: 35,
+      purpose: "Client",
+      label: "Odoo Id",
+      Key: "odoo_id",
+      Status: "Active",
+      CreatedAt: "2024-12-2 09:00",
+      actions: [
+        { name: "Edit", onClick: () => handleEdit(1), color: "warning" },
+        { name: "Delete", onClick: () => handleDelete(1), color: "info" },
+      ]
+    },
+    {
+      id: 35,
+      purpose: "Client",
+      label: "Odoo Id",
+      Key: "odoo_id",
+      Status: "Active",
+      CreatedAt: "2024-12-2 09:00",
+      actions: [
+        { name: "Edit", onClick: () => handleEdit(1), color: "primary" },
+        { name: "Delete", onClick: () => handleDelete(1), color: "secondary" },
+      ]
+    },
+  ]
+
+  const headers = ["ID", "Purpose", "Label", "Key", "Status", "Created At", "Actions"]
+
   const exampleFn = () => {
     return () => {
       // burası unmount olduğunda çalışır
@@ -57,9 +137,19 @@ export default function App() {
 
   useEffect(exampleFn, dependencies);
 
+  const handleEdit = (id) => {
+    console.log("Edit clicked for ID:", id);
+    // Edit işlemleri...
+  };
+
+  const handleDelete = (id) => {
+    console.log("Delete clicked for ID:", id);
+    // Delete işlemleri...
+  };
+
   return (
     <>
-      <div class="container py-3">
+      <div class="container py-3 d-flex flex-column ">
         <Header />
 
         <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
@@ -74,6 +164,9 @@ export default function App() {
         </div>
 
         <AdditionalInfoForm />
+        <Box sx={{margin: 2}}>
+          <TableGenerator headers={headers} data={data} />
+        </Box>
       </div>
     </>
   );
