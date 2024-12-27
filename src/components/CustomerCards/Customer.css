@@ -1,0 +1,14 @@
+.card-box {
+  height: 350px;
+  border: 2px solid rgb(185, 170, 170);
+}
+
+.card-top-bg {
+  background-color: #E7FBB4;
+  height: 120px;
+}
+
+.customer-image {
+  width: 220px;
+  border: 2px solid rgb(185, 170, 170);
+}
