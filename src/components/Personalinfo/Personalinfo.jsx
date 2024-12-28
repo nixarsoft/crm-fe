@@ -8,7 +8,7 @@ function Personalinfo() {
   return (
     <Container fluid style={{ minHeight: "100vh" }} className='d-flex justify-content-center align-items-center '>
       <Row className='w-100 h-100 justify-content-center'>
-        <Col sm={8} lg={4} >
+        <Col xs={12} md={8} lg={5} >
           <div className='text-center'>
             <h1>Personal Info</h1>
           </div>
@@ -38,7 +38,7 @@ function Personalinfo() {
                 <Form.Label className='fs-5'>
                   Email
                 </Form.Label>
-                <FormControl className='bg-transparent border-black' />
+                <Form.Control className='bg-transparent border-black' />
                 <Form.Text className="text-muted">
                   Email
                 </Form.Text>
