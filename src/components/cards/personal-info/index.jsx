@@ -1,5 +1,4 @@
 import React from "react";
-
 const PersonalInfoCard = () => {
   return (
     <>
@@ -33,7 +32,7 @@ const PersonalInfoCard = () => {
             <label className="fs-4 mb-2 form-label" htmlFor="email">
                 E-mail
               </label>
-              <input type="email" id="email" className="form-control" />
+              <input type="email" id="email" className="form-control"/>
               <label className="text-secondary mt-2" htmlFor="email">
                 E-mail
               </label>
