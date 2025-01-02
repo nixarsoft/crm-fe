@@ -3,6 +3,7 @@ import AdditionalInfoForm from "./components/forms/additional-info-form";
 import Header from "./components/header";
 import TableGenerator from "./components/TableGenerator/TableGenerator";
 import { Box } from "@mui/material";
+import AssignedAgents from "./components/CustomerCards/AssignedAgents";
 
 /*
 Soru: JS'de export default ile export const arasındaki farklar nelerdir?
@@ -50,7 +51,6 @@ export default function App() {
      içerisinde kullanılmalı.
   */
 
-
   const data = [
     {
       id: 35,
@@ -62,7 +62,7 @@ export default function App() {
       actions: [
         { name: "Edit", onClick: () => handleEdit(1), color: "success" },
         { name: "Delete", onClick: () => handleDelete(1), color: "error" },
-      ]
+      ],
     },
     {
       id: 35,
@@ -74,7 +74,7 @@ export default function App() {
       actions: [
         { name: "Edit", onClick: () => handleEdit(1), color: "warning" },
         { name: "Delete", onClick: () => handleDelete(1), color: "info" },
-      ]
+      ],
     },
     {
       id: 35,
@@ -86,7 +86,7 @@ export default function App() {
       actions: [
         { name: "Edit", onClick: () => handleEdit(1), color: "primary" },
         { name: "Delete", onClick: () => handleDelete(1), color: "secondary" },
-      ]
+      ],
     },
     {
       id: 35,
@@ -98,7 +98,7 @@ export default function App() {
       actions: [
         { name: "Edit", onClick: () => handleEdit(1), color: "success" },
         { name: "Delete", onClick: () => handleDelete(1), color: "error" },
-      ]
+      ],
     },
     {
       id: 35,
@@ -110,7 +110,7 @@ export default function App() {
       actions: [
         { name: "Edit", onClick: () => handleEdit(1), color: "warning" },
         { name: "Delete", onClick: () => handleDelete(1), color: "info" },
-      ]
+      ],
     },
     {
       id: 35,
@@ -122,11 +122,19 @@ export default function App() {
       actions: [
         { name: "Edit", onClick: () => handleEdit(1), color: "primary" },
         { name: "Delete", onClick: () => handleDelete(1), color: "secondary" },
-      ]
+      ],
     },
-  ]
+  ];
 
-  const headers = ["ID", "Purpose", "Label", "Key", "Status", "Created At", "Actions"]
+  const headers = [
+    "ID",
+    "Purpose",
+    "Label",
+    "Key",
+    "Status",
+    "Created At",
+    "Actions",
+  ];
 
   const exampleFn = () => {
     return () => {
@@ -164,9 +172,11 @@ export default function App() {
         </div>
 
         <AdditionalInfoForm />
-        <Box sx={{margin: 2}}>
+        <Box sx={{ margin: 2 }}>
           <TableGenerator headers={headers} data={data} />
         </Box>
+        {/* // AssignedAgents componenti burada çağrıldı. */}
+        <AssignedAgents />
       </div>
     </>
   );
