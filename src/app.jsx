@@ -70,8 +70,8 @@ function App() {
     },
   ]);
 
-  const handleEdit = (id) => {
-    console.log(`Edit row with ID: ${id}`);
+  const handleOpen = (id) => {
+    console.log(`Open row with ID: ${id}`);
   };
 
   const handleDelete = (id) => {
@@ -83,7 +83,7 @@ function App() {
       <Table
         headers={headers}
         data={data}
-        onEdit={handleEdit}
+        onOpen={handleOpen}
         onDelete={handleDelete}
       />
     </div>

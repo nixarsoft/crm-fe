@@ -1,11 +1,11 @@
 import React from "react";
 import TableHeader from "./TableHeader";
 import TableRow from "./TableRow";
-import "./Table.module.css";
+import styles from "./Table.module.css";
 
-const Table = ({ headers, data, onEdit, onDelete }) => {
+const Table = ({ headers, data, onOpen, onDelete }) => {
   return (
-    <table className="table">
+    <table className={styles.table}>
       <thead>
         <TableHeader headers={headers} />
       </thead>
@@ -14,7 +14,7 @@ const Table = ({ headers, data, onEdit, onDelete }) => {
           <TableRow
             key={row.id}
             row={row}
-            onEdit={onEdit}
+            onOpen={onOpen}
             onDelete={onDelete}
           />
         ))}

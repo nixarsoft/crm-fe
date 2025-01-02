@@ -1,7 +1,7 @@
 import React from "react";
 import Button from "../Button/Button";
 
-const TableRow = ({ row, onEdit, onDelete }) => {
+const TableRow = ({ row, onOpen, onDelete }) => {
   return (
     <tr>
       <td>{row.id}</td>
@@ -11,9 +11,9 @@ const TableRow = ({ row, onEdit, onDelete }) => {
       <td>{row.createdAt}</td>
       <td>
         <Button
-          label="Edit"
+          label="Open"
           styleType={"primary"}
-          onClick={() => onEdit(row.id)}
+          onClick={() => onOpen(row.id)}
         />
         <Button
           label="Del"
