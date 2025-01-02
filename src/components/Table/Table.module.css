@@ -18,3 +18,7 @@ th {
 table tr:nth-child(even) {
   background-color: #eaf2d3;
 }
+.agent {
+  color: #3838ff;
+  font-weight: 600;
+}
