@@ -1,73 +1,86 @@
-import { Button, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from "@mui/material"
+import { Button, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from "@mui/material";
 
 function TableGenerator({ headers, data }) {
-
-    /*
-    headers prop'u tablo başlıklarını kullanmak için array alır.
-    data prop'u tablo verilerini kullanmak için array alır. Key'ler tablo satırlarını temsil eder. Eğer "actions" key'i verilirse her satırın sonuna bir buton eklenir.
-    Button verilise renkleri success,error,warning,info,primary,secondary olarak değiştirilebilir.(Material UI default renkleri kullanır)
-    örnek kullanım arrays aps.jsx dosyasında verilmiştir.
-     */
-    return (
-        <TableContainer component={Paper}>
-            <Table>
-
-                <TableHead>
-                    <TableRow sx={{
-                        "th": {
-                            fontSize: 14,
-                            fontWeight: "bold",
-                            color: "#fff",
-                            border: "none",
-                            borderBottom: "2px solid",
-                            backgroundColor: "#0d6efd",
-                            textAlign: "center"
-                        },
-                    }}>
-                        {headers.map((headName, index) => (
-                            <TableCell key={index}>
-                                {headName}
-                            </TableCell>
-                        ))}
-                    </TableRow>
-                </TableHead>
-                <TableBody>
-                    {data.map((row, rowIndex) => (
-                        <TableRow
-                            key={rowIndex}
-                            sx={{
-                                "&:nth-of-type(even)": { backgroundColor: "#ddd" },
-                                "td": { textAlign: "center" },
-                                "&:hover": { backgroundColor: '#a5c9fe' }
-                            }}
-                        >
-                            {Object.keys(row).map((key, cellIndex) => (
-                                <TableCell key={cellIndex}>
-                                    {key === "actions" ? (
-                                        row.actions.map((action, index) => (
-                                            <Button
-                                                key={index}
-                                                onClick={action.onClick}
-                                                color={action.color}
-                                                variant="contained"
-                                                sx={{
-                                                    "margin": "0 2px",
-                                                }}
-                                            >
-                                                {action.name}
-                                            </Button>
-                                        ))
-                                    ) : (
-                                        row[key]
-                                    )}
-                                </TableCell>
-                            ))}
-                        </TableRow>
-                    ))}
-                </TableBody>
-            </Table>
-        </TableContainer>
-    )
+  return (
+    <TableContainer
+      component={Paper}
+      sx={{
+        border: "1px solid #aad751",
+        backgroundColor: "#aad751",
+        maxWidth: "85%",
+        margin: "20px auto"
+      }}
+    >
+      <Table
+      size="small"
+        sx={{
+          borderCollapse: "separate",
+          borderSpacing: "2px 2px",
+        }}
+      >
+        <TableHead>
+          <TableRow
+            sx={{
+              "th": {
+                fontSize: 14,
+                fontWeight: "bold",
+                color: "#f5f5f5",
+                border: "none",
+                borderBottom: "px solid #000",
+                backgroundColor: "#aad751",
+                textAlign: "center"
+              },
+            }}
+          >
+            {headers.map((headName, i) => (
+              <TableCell key={i}>{headName}</TableCell>
+            ))}
+          </TableRow>
+        </TableHead>
+        <TableBody>
+          {data.map((row, r) => (
+            <TableRow
+              key={r}
+              sx={{
+                "&:nth-of-type(odd)": { backgroundColor: "#fafafa" },
+                "&:nth-of-type(even)": { backgroundColor: "#d9f2a4" },
+                "td": { textAlign: "center" },
+                "&:hover": { backgroundColor: "#c4e693" }
+              }}
+            >
+              {Object.keys(row).map((k, c) => (
+                <TableCell
+                  key={c}
+                  sx={
+                    k === "Agent"
+                      ? { color: "#2d68c4", fontWeight: "bold" }
+                      : {}
+                  }
+                >
+                  {k === "actions" ? (
+                    row.actions.map((action, idx) => (
+                      <Button
+                        size="small"
+                        key={idx}
+                        onClick={action.onClick}
+                        color={action.color}
+                        variant="contained"
+                        sx={{ mr: 2}}
+                      >
+                        {action.name}
+                      </Button>
+                    ))
+                  ) : (
+                    row[k]
+                  )}
+                </TableCell>
+              ))}
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+    </TableContainer>
+  );
 }
 
-export default TableGenerator
+export default TableGenerator;

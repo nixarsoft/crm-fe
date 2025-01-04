@@ -53,80 +53,97 @@ export default function App() {
 
   const data = [
     {
-      id: 35,
-      purpose: "Client",
-      label: "Odoo Id",
-      Key: "odoo_id",
+      id: 25,
+      purpose: "Whatsapp",
+      label: "+90 850 308 0335",
+      Key: "John Employee",
       Status: "Active",
       CreatedAt: "2024-12-2 09:00",
       actions: [
-        { name: "Edit", onClick: () => handleEdit(1), color: "success" },
-        { name: "Delete", onClick: () => handleDelete(1), color: "error" },
+        { name: "Open", onClick: () => handleEdit(1), color: "success" },
+        { name: "Del", onClick: () => handleDelete(1), color: "error" },
       ]
     },
     {
-      id: 35,
-      purpose: "Client",
-      label: "Odoo Id",
-      Key: "odoo_id",
+      id: 16,
+      purpose: "Whatsapp",
+      label: "+90 537 493 7766",
+      Key: "John Employee",
       Status: "Active",
-      CreatedAt: "2024-12-2 09:00",
+      CreatedAt: "2024-12-2 10:00",
       actions: [
-        { name: "Edit", onClick: () => handleEdit(1), color: "warning" },
-        { name: "Delete", onClick: () => handleDelete(1), color: "info" },
+
       ]
     },
     {
-      id: 35,
-      purpose: "Client",
-      label: "Odoo Id",
-      Key: "odoo_id",
+      id: 14,
+      purpose: "Cellphone",
+      label: "+90 533 666 77 88",
+      Key: "Jane Agent",
       Status: "Active",
-      CreatedAt: "2024-12-2 09:00",
+      CreatedAt: "2024-12-2 10:00",
       actions: [
-        { name: "Edit", onClick: () => handleEdit(1), color: "primary" },
-        { name: "Delete", onClick: () => handleDelete(1), color: "secondary" },
+
       ]
     },
     {
-      id: 35,
-      purpose: "Client",
-      label: "Odoo Id",
-      Key: "odoo_id",
+      id: 8,
+      purpose: "Instagram",
+      label: "nixarsoft",
+      Key: "John Employee",
       Status: "Active",
-      CreatedAt: "2024-12-2 09:00",
+      CreatedAt: "2024-12-2 10:00",
       actions: [
-        { name: "Edit", onClick: () => handleEdit(1), color: "success" },
-        { name: "Delete", onClick: () => handleDelete(1), color: "error" },
+
       ]
     },
     {
-      id: 35,
-      purpose: "Client",
-      label: "Odoo Id",
-      Key: "odoo_id",
+      id: 7,
+      purpose: "Telegram",
+      label: "example_username",
+      Key: "John Employee",
       Status: "Active",
-      CreatedAt: "2024-12-2 09:00",
+      CreatedAt: "2024-12-2 10:00",
       actions: [
-        { name: "Edit", onClick: () => handleEdit(1), color: "warning" },
-        { name: "Delete", onClick: () => handleDelete(1), color: "info" },
+
       ]
     },
     {
-      id: 35,
-      purpose: "Client",
-      label: "Odoo Id",
-      Key: "odoo_id",
+      id: 4,
+      purpose: "Facebook",
+      label: "nixarsoft",
+      Key: "Jane Agent",
       Status: "Active",
-      CreatedAt: "2024-12-2 09:00",
+      CreatedAt: "2024-12-2 10:00",
       actions: [
-        { name: "Edit", onClick: () => handleEdit(1), color: "primary" },
-        { name: "Delete", onClick: () => handleDelete(1), color: "secondary" },
+
+      ]
+    },
+    {
+      id: 3,
+      purpose: "Telegram",
+      label: "foo_bar_baz",
+      Key: "Jane Agent",
+      Status: "Active",
+      CreatedAt: "2024-12-2 10:00",
+      actions: [
+
+      ]
+    },
+    {
+      id: 2,
+      purpose: "Instagram",
+      label: "nixarsoft",
+      Key: "John Employee",
+      Status: "Active",
+      CreatedAt: "2024-12-2 10:00",
+      actions: [
+
       ]
     },
   ]
 
-  const headers = ["ID", "Purpose", "Label", "Key", "Status", "Created At", "Actions"]
+  const headers = ["ID", "Platform", "Identifier", "Agent", "Status", "Created At", "Actions"]
 
   const exampleFn = () => {
     return () => {
