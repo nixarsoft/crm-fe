@@ -4,6 +4,7 @@ import Header from "./components/header";
 import TableGenerator from "./components/TableGenerator/TableGenerator";
 import { Box } from "@mui/material";
 import AssignedAgents from "./components/CustomerCards/AssignedAgents";
+import CustomerCards from "./components/CardBox/CustomerCards";
 
 /*
 Soru: JS'de export default ile export const arasındaki farklar nelerdir?
@@ -177,6 +178,7 @@ export default function App() {
         </Box>
         {/* // AssignedAgents componenti burada çağrıldı. */}
         <AssignedAgents />
+        <CustomerCards/>
       </div>
     </>
   );
