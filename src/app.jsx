@@ -1,183 +1,92 @@
-import { useEffect, useState } from "react";
-import AdditionalInfoForm from "./components/forms/additional-info-form";
-import Header from "./components/header";
-import TableGenerator from "./components/TableGenerator/TableGenerator";
-import { Box } from "@mui/material";
-import AssignedAgents from "./components/CustomerCards/AssignedAgents";
+import { Container, Row, Col, Form, Button } from 'react-bootstrap';
 
-/*
-Soru: JS'de export default ile export const arasındaki farklar nelerdir?
-
-Soru: Reactjs'de component oluşturma yöntemleri nelerdir?
-Cevap: 1. yöntem: const olarak fonksiyonu tanımlayıp onu export default yapmak.
-2. yöntem: normal bir fonksiyon tanımlayıp onu en altta export default yapmak.
-3. yöntem: tek satırda export default function FonksiyonAdi şeklinde yazmak.
-
-Soru: Reactjsde bir fonksiyonun hook olup olmadığını neye göre ayırt ederiz
-      (yada neye göre anlarız)?
-Cevap: use ile başlayan fonksiyonlar hook kurallarına tabiidir.
-
-Soru: React'ta hook ne anlama gelir?
-Cevap: Hook kelime anlamı kanca demektir, reactta componentlerin life cycle'ları esnasında
-bazı durumlarda çağrılan fonksiyonlar vardır ve bunların ismi hook'tur.
-
-Soru: mount ve unmount olayları nedir?
-Cevap: React'ta componentler DOM'a yazılması ve DOM'daki componentin çıkartılması işlemleri
-vardır. DOM'a yazılma işlemine mount, DOM'dan çıkartılma işlemine de unmount event'ı denir.
-
-Soru: React'ta fragment nedir?
-
-Soru: JSX nedir?
-Cevap: Javascript XML'in kısaltılmışı.
-
-*/
-
-export default function App() {
-  const [counter, setCounter] = useState(0);
-  const [inputValue, setInputValue] = useState("");
-
-  /*
-  Hook ne anlama gelir?
-  Componentlerin lifecycle'larındaki aşamalar arasına çalışması için eklenen fonksiyonlardır.
-  Örneğin useEffect'i ele alırsak.
-  
-  use ile başlayan fonksiyonlar reactjs'de hook olarak tanımlanır. ve bu fonksiyonlar
-  hook kuralarına bağlıdır. Sık kullanılan hooklar useState, useEffect, useRef, 
-  useLayoutEffect. Diğer hooklar ileri konularda işlenecektir.
-  
-  Hook kuralları:
-  1- use ifadesiyle başlayan fonksiyonlar hook'tur.
-  2- Componentlerde hiçbir şart veya döngü içerisinde olmamak şartıyla doğrudan component
-     içerisinde kullanılmalı.
-  */
-
-  const data = [
-    {
-      id: 35,
-      purpose: "Client",
-      label: "Odoo Id",
-      Key: "odoo_id",
-      Status: "Active",
-      CreatedAt: "2024-12-2 09:00",
-      actions: [
-        { name: "Edit", onClick: () => handleEdit(1), color: "success" },
-        { name: "Delete", onClick: () => handleDelete(1), color: "error" },
-      ],
-    },
-    {
-      id: 35,
-      purpose: "Client",
-      label: "Odoo Id",
-      Key: "odoo_id",
-      Status: "Active",
-      CreatedAt: "2024-12-2 09:00",
-      actions: [
-        { name: "Edit", onClick: () => handleEdit(1), color: "warning" },
-        { name: "Delete", onClick: () => handleDelete(1), color: "info" },
-      ],
-    },
-    {
-      id: 35,
-      purpose: "Client",
-      label: "Odoo Id",
-      Key: "odoo_id",
-      Status: "Active",
-      CreatedAt: "2024-12-2 09:00",
-      actions: [
-        { name: "Edit", onClick: () => handleEdit(1), color: "primary" },
-        { name: "Delete", onClick: () => handleDelete(1), color: "secondary" },
-      ],
-    },
-    {
-      id: 35,
-      purpose: "Client",
-      label: "Odoo Id",
-      Key: "odoo_id",
-      Status: "Active",
-      CreatedAt: "2024-12-2 09:00",
-      actions: [
-        { name: "Edit", onClick: () => handleEdit(1), color: "success" },
-        { name: "Delete", onClick: () => handleDelete(1), color: "error" },
-      ],
-    },
-    {
-      id: 35,
-      purpose: "Client",
-      label: "Odoo Id",
-      Key: "odoo_id",
-      Status: "Active",
-      CreatedAt: "2024-12-2 09:00",
-      actions: [
-        { name: "Edit", onClick: () => handleEdit(1), color: "warning" },
-        { name: "Delete", onClick: () => handleDelete(1), color: "info" },
-      ],
-    },
-    {
-      id: 35,
-      purpose: "Client",
-      label: "Odoo Id",
-      Key: "odoo_id",
-      Status: "Active",
-      CreatedAt: "2024-12-2 09:00",
-      actions: [
-        { name: "Edit", onClick: () => handleEdit(1), color: "primary" },
-        { name: "Delete", onClick: () => handleDelete(1), color: "secondary" },
-      ],
-    },
-  ];
-
-  const headers = [
-    "ID",
-    "Purpose",
-    "Label",
-    "Key",
-    "Status",
-    "Created At",
-    "Actions",
-  ];
-
-  const exampleFn = () => {
-    return () => {
-      // burası unmount olduğunda çalışır
-    };
-  };
-  const dependencies = [];
-
-  useEffect(exampleFn, dependencies);
-
-  const handleEdit = (id) => {
-    console.log("Edit clicked for ID:", id);
-    // Edit işlemleri...
-  };
-
-  const handleDelete = (id) => {
-    console.log("Delete clicked for ID:", id);
-    // Delete işlemleri...
-  };
-
+function App() {
   return (
-    <>
-      <div class="container py-3 d-flex flex-column ">
-        <Header />
+    <Container className="vh-100">
+      <Row className="justify-content-center align-items-center h-100">
+        <Col xs={12} md={6} xl={4}>
+          <Form>
+            <Row className="border border-white g-3 p-3">
+              <Col xs={12} sm={6}>
+                <Form.Label className="fw-semibold fs-5">Firstname</Form.Label>
+                <Form.Control
+                  type="text"
+                  id="firstname"
+                  name="firstname"
+                  className="border border-2 border-secondary"
+                />
+                <Form.Text className="text-white-50">
+                  Firstname
+                </Form.Text>
+              </Col>
 
-        <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
-          <h1 class="display-4 fw-normal text-body-emphasis">
-            ReactJS Dersleri
-          </h1>
-          <p class="fs-5 text-body-secondary">
-            Quickly build an effective pricing table for your potential
-            customers with this Bootstrap example. It’s built with default
-            Bootstrap components and utilities with little customization.
-          </p>
-        </div>
+              <Col xs={12} sm={6}>
+                <Form.Label className="fw-semibold fs-5">Lastname</Form.Label>
+                <Form.Control
+                  type="text"
+                  id="lastname"
+                  name="lastname"
+                  className="border border-2 border-secondary"
+                />
+                <Form.Text className="text-white-50">
+                  Lastname
+                </Form.Text>
+              </Col>
 
-        <AdditionalInfoForm />
-        <Box sx={{ margin: 2 }}>
-          <TableGenerator headers={headers} data={data} />
-        </Box>
-        {/* // AssignedAgents componenti burada çağrıldı. */}
-        <AssignedAgents />
-      </div>
-    </>
+              <Col xs={12}>
+                <Form.Label className="fw-semibold fs-5">E-mail</Form.Label>
+                <Form.Control
+                  type="email"
+                  id="email"
+                  name="email"
+                  className="border border-2 border-secondary"
+                />
+                <Form.Text className="text-white-50">
+                  E-mail
+                </Form.Text>
+              </Col>
+
+              <Col xs={12}>
+                <Form.Label className="fw-semibold fs-5">Gender</Form.Label>
+                <div>
+                  <Form.Check
+                    inline
+                    type="radio"
+                    id="gender_male"
+                    name="gender"
+                    value="male"
+                    label="Male"
+                  />
+                  <Form.Check
+                    inline
+                    type="radio"
+                    id="gender_female"
+                    name="gender"
+                    value="female"
+                    label="Female"
+                  />
+                  <Form.Check
+                    inline
+                    type="radio"
+                    id="gender_prefer_not_to_say"
+                    name="gender"
+                    value="Prefer not to say"
+                    label="Prefer not to say"
+                  />
+                </div>
+              </Col>
+
+              <Button variant="success">
+                <div className="d-flex align-items-center justify-content-center">
+                  <span className="fs-5">Save</span>
+                </div>
+              </Button>
+            </Row>
+          </Form>
+        </Col>
+      </Row>
+    </Container>
   );
 }
+
+export default App;
