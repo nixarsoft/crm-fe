@@ -3,7 +3,10 @@ import AdditionalInfoForm from "./components/forms/additional-info-form";
 import Header from "./components/header";
 import TableGenerator from "./components/TableGenerator/TableGenerator";
 import { Box } from "@mui/material";
-import AssignedAgents from "./components/CustomerCards/AssignedAgents";
+import Tab from 'react-bootstrap/Tab';
+import Tabs from 'react-bootstrap/Tabs';
+
+import AssignedAgents from "./components/CustomerCards/";
 
 /*
 Soru: JS'de export default ile export const arasındaki farklar nelerdir?
@@ -154,6 +157,8 @@ export default function App() {
     console.log("Delete clicked for ID:", id);
     // Delete işlemleri...
   };
+  
+  const [key, setKey] = useState('home');
 
   return (
     <>
@@ -170,12 +175,29 @@ export default function App() {
             Bootstrap components and utilities with little customization.
           </p>
         </div>
-
+        <Tabs
+          id="controlled-tab-example"
+          activeKey={key}
+          onSelect={(k) => setKey(k)}
+          className="mb-3"
+        >
+          <Tab eventKey="personalinfo" title="Personal Info">
+            Tab content for Personal Info
+          </Tab>
+          <Tab eventKey="socialmedia" title="Social Media">
+            Tab content for Social Media
+          </Tab>
+          <Tab eventKey="conversationhistory" title="Conversation History" >
+            Tab content for Conversation History
+          </Tab>
+          <Tab eventKey="assignagents" title="Assigned Agents">
+            Tab content for Assigned Agents
+          </Tab>
+        </Tabs>
         <AdditionalInfoForm />
         <Box sx={{ margin: 2 }}>
           <TableGenerator headers={headers} data={data} />
         </Box>
-        {/* // AssignedAgents componenti burada çağrıldı. */}
         <AssignedAgents />
       </div>
     </>

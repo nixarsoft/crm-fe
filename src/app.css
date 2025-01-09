@@ -1,0 +1,35 @@
+/* General Tab Styles */
+.nav-tabs {
+    border-bottom: 2px solid #ccc;
+  }
+  
+  .nav-tabs .nav-link {
+    border: 1px solid transparent;
+    border-radius: 0;
+    color: #f8f9fa;
+    padding: 10px 20px;
+    margin-bottom: -1px;
+    font-size: 16px;
+    background-color: #000;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .nav-tabs .nav-link.active {
+    color: #fff !important; /* Active tab text color changed to white */
+    background-color: #007bff !important; /* Active tab background color */
+    border-color: #007bff !important; /* Active tab border color */
+  }
+  
+  .nav-tabs .nav-link:hover {
+    background-color: #666;
+    color: #fff;
+  }
+  
+  /* Tab Content */
+  .tab-content {
+    border: 1px solid #ccc;
+    border-top: none;
+    padding: 20px;
+    background-color: #fff;
+  }
+  
