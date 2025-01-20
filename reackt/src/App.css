@@ -1,0 +1,71 @@
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; 
+  padding-left: 50px; 
+  height: 100vh;
+  margin: 0;
+}
+
+.table-title {
+  font-size: 24px;
+  color: rgb(0, 0, 0);
+  text-align: left; 
+  margin-bottom: 10px;
+}
+
+.conversation-table-container {
+  width: 90%;
+  max-width: 1200px;
+  overflow-x: auto;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center; 
+}
+
+.conversation-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 auto;
+  line-height: 1.2; 
+}
+
+.conversation-table th, .conversation-table td {
+  border: 1px solid #3c9145; 
+  padding: 8px; 
+  text-align: left;
+  font-size: 16px;
+}
+
+.conversation-table th {
+  background-color: #4dba58;
+  color: #f9fbf9;
+  font-size: 18px;
+}
+
+.open-button {
+  padding: 8px 15px;
+  background-color: #139431;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.open-button:hover {
+  background-color: #96d69f;
+}
+
+.del-button {
+  padding: 8px 15px;
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.del-button:hover {
+  background-color: #ff0000;
+}
