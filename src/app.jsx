@@ -6,8 +6,8 @@ import { Box } from "@mui/material";
 import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
 
-import AssignedAgents from "./components/CustomerCards/";
-
+import AssignedAgents from "./components/CustomerCards/AssignedAgents.jsx";
+import ConversationHistory from "./components/CustomerCards/ConversationHistory.jsx";
 /*
 Soru: JS'de export default ile export const arasındaki farklar nelerdir?
 
@@ -157,7 +157,7 @@ export default function App() {
     console.log("Delete clicked for ID:", id);
     // Delete işlemleri...
   };
-  
+
   const [key, setKey] = useState('home');
 
   return (
@@ -199,6 +199,7 @@ export default function App() {
           <TableGenerator headers={headers} data={data} />
         </Box>
         <AssignedAgents />
+        <ConversationHistory/>
       </div>
     </>
   );
